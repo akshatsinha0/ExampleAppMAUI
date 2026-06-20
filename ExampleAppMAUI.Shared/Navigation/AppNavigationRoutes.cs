@@ -4,8 +4,8 @@ namespace ExampleAppMAUI.Shared.Navigation;
 
 public static class AppNavigationRoutes
 {
-    public const string Counter = "counter";
     public const string Home = "";
+    public const string Profile = "profile";
+    public const string Settings = "settings";
     public const string Todos = TodoRoutes.NavigationHref;
-    public const string Weather = "weather";
 }

@@ -1,0 +1,25 @@
+@page "/profile"
+
+<PageTitle>@ProfileText.PageTitle</PageTitle>
+
+<main class="profile-page">
+    <section class="profile-panel">
+        <p class="profile-kicker">@ProfileText.PageTitle</p>
+        <h1>@ProfileText.DisplayName</h1>
+        <p class="profile-role">@AppIdentityText.ProfileRole</p>
+    </section>
+
+    <section class="profile-grid" aria-label="@ProfileText.PageTitle">
+        <article class="profile-detail">
+            <span>@ProfileText.AppSectionLabel</span>
+            <strong>@AppIdentityText.Name</strong>
+            <p>@AppIdentityText.Tagline</p>
+        </article>
+
+        <article class="profile-detail">
+            <span>@ProfileText.StorageSectionLabel</span>
+            <strong>@ProfileText.StorageMode</strong>
+            <p>@SettingsText.DataDescription</p>
+        </article>
+    </section>
+</main>

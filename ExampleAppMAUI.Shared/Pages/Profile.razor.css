@@ -1,0 +1,56 @@
+.profile-page {
+    color: var(--akshat-color-ink);
+    display: grid;
+    gap: var(--akshat-space-4);
+    max-width: 56rem;
+}
+
+.profile-panel,
+.profile-detail {
+    background: var(--akshat-color-surface-raised);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-panel);
+    padding: var(--akshat-space-5);
+}
+
+.profile-kicker,
+.profile-detail span {
+    color: var(--akshat-color-coffee);
+    font-size: 0.85rem;
+    font-weight: var(--akshat-font-weight-semibold);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.profile-panel h1 {
+    font-weight: var(--akshat-font-weight-bold);
+    margin: var(--akshat-space-2) 0;
+}
+
+.profile-role,
+.profile-detail p {
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
+    margin: 0;
+}
+
+.profile-grid {
+    display: grid;
+    gap: var(--akshat-space-3);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.profile-detail {
+    display: grid;
+    gap: var(--akshat-space-2);
+}
+
+.profile-detail strong {
+    font-weight: var(--akshat-font-weight-semibold);
+}
+
+@media (max-width: 720px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}

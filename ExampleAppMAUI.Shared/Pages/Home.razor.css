@@ -1,0 +1,36 @@
+.home-page {
+    color: var(--akshat-color-ink);
+    display: grid;
+    gap: var(--akshat-space-4);
+    max-width: 56rem;
+}
+
+.home-panel {
+    background: var(--akshat-color-surface-raised);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-panel);
+    padding: var(--akshat-space-5);
+}
+
+.home-panel p {
+    color: var(--akshat-color-coffee);
+    font-weight: var(--akshat-font-weight-semibold);
+    margin: 0 0 var(--akshat-space-2);
+}
+
+.home-panel h1 {
+    font-weight: var(--akshat-font-weight-bold);
+    margin: 0 0 var(--akshat-space-2);
+}
+
+.home-panel span,
+.home-runtime span {
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
+}
+
+.home-runtime {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--akshat-space-3);
+}

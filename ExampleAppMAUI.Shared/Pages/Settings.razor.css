@@ -1,0 +1,45 @@
+.settings-page {
+    color: var(--akshat-color-ink);
+    display: grid;
+    gap: var(--akshat-space-4);
+    max-width: 56rem;
+}
+
+.settings-header {
+    display: grid;
+    gap: var(--akshat-space-2);
+}
+
+.settings-header h1 {
+    font-weight: var(--akshat-font-weight-bold);
+}
+
+.settings-header p {
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
+    margin: 0;
+}
+
+.settings-list {
+    display: grid;
+    gap: var(--akshat-space-3);
+}
+
+.settings-item {
+    background: var(--akshat-color-surface-raised);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-panel);
+    padding: var(--akshat-space-5);
+}
+
+.settings-item h2 {
+    font-size: 1.15rem;
+    font-weight: var(--akshat-font-weight-semibold);
+    margin: 0 0 var(--akshat-space-2);
+}
+
+.settings-item p {
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
+    margin: 0;
+}
