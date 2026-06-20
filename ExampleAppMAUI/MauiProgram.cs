@@ -1,5 +1,7 @@
 ﻿using ExampleAppMAUI.Services;
+using ExampleAppMAUI.Todos;
 using ExampleAppMAUI.Shared.Services;
+using ExampleAppMAUI.Shared.Todos;
 using Microsoft.Extensions.Logging;
 
 namespace ExampleAppMAUI
@@ -18,6 +20,8 @@ namespace ExampleAppMAUI
 
             // Add device-specific services used by the ExampleAppMAUI.Shared project
             builder.Services.AddSingleton<IFormFactor, FormFactor>();
+            builder.Services.AddSingleton<ITodoStore>(_ =>
+                JsonTodoStore.CreateForFile(Path.Combine(FileSystem.AppDataDirectory, TodoStorageNames.FileName)));
 
             builder.Services.AddMauiBlazorWebView();
 
