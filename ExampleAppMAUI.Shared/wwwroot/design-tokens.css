@@ -1,0 +1,14 @@
+:root {
+    --todo-color-surface: #ffffff;
+    --todo-color-surface-muted: #f6f8fb;
+    --todo-color-border: #d8dee8;
+    --todo-color-text: #16202a;
+    --todo-color-text-muted: #5d6b7a;
+    --todo-color-completed: #247a45;
+    --todo-space-2: 0.5rem;
+    --todo-space-3: 0.75rem;
+    --todo-space-4: 1rem;
+    --todo-space-5: 1.25rem;
+    --todo-radius-control: 0.5rem;
+    --todo-radius-panel: 0.75rem;
+}

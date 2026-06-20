@@ -1,0 +1,104 @@
+@page "/todos"
+@inject ITodoStore TodoStore
+
+<PageTitle>@TodoText.PageTitle</PageTitle>
+
+<main class="@TodoCssClasses.Page">
+    <header class="@TodoCssClasses.Header">
+        <h1>@TodoText.PageTitle</h1>
+        <p>@TodoText.SectionSubtitle</p>
+    </header>
+
+    <form class="@TodoCssClasses.Form" @onsubmit="AddTodoAsync" @onsubmit:preventDefault>
+        <input class="@TodoCssClasses.Input"
+               @bind="newTodoTitle"
+               placeholder="@TodoText.InputPlaceholder"
+               aria-label="@TodoText.InputPlaceholder" />
+        <button class="@TodoCssClasses.ButtonPrimary" type="submit">@TodoText.AddButton</button>
+    </form>
+
+    @if (todos.Count == 0)
+    {
+        <p class="@TodoCssClasses.Empty">@TodoText.EmptyState</p>
+    }
+    else
+    {
+        <ul class="@TodoCssClasses.List">
+            @foreach (var todo in todos)
+            {
+                <li class="@GetItemClass(todo)">
+                    <span class="@TodoCssClasses.Title">@todo.Title</span>
+                    <span class="@TodoCssClasses.Status">@todo.Status</span>
+                    <div class="@TodoCssClasses.Actions">
+                        <button class="@TodoCssClasses.ButtonSecondary" @onclick="() => ToggleTodoAsync(todo)">
+                            @GetToggleText(todo)
+                        </button>
+                        <button class="@TodoCssClasses.ButtonDanger" @onclick="() => DeleteTodoAsync(todo)">
+                            @TodoText.DeleteButton
+                        </button>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+</main>
+
+@code {
+    private readonly List<TodoItem> todos = [];
+    private string newTodoTitle = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        todos.AddRange(await TodoStore.LoadAsync());
+    }
+
+    private async Task AddTodoAsync()
+    {
+        if (string.IsNullOrWhiteSpace(newTodoTitle))
+        {
+            return;
+        }
+
+        todos.Insert(0, TodoItemFactory.Create(newTodoTitle));
+        newTodoTitle = string.Empty;
+        await PersistAsync();
+    }
+
+    private async Task ToggleTodoAsync(TodoItem todo)
+    {
+        var index = todos.FindIndex(item => item.Id == todo.Id);
+
+        if (index < 0)
+        {
+            return;
+        }
+
+        todos[index] = TodoItemActions.ToggleCompletion(todo);
+        await PersistAsync();
+    }
+
+    private async Task DeleteTodoAsync(TodoItem todo)
+    {
+        todos.RemoveAll(item => item.Id == todo.Id);
+        await PersistAsync();
+    }
+
+    private static string GetItemClass(TodoItem todo)
+    {
+        return todo.Status == TodoCompletionStatus.Completed
+            ? TodoCssClasses.ItemCompleted
+            : TodoCssClasses.Item;
+    }
+
+    private static string GetToggleText(TodoItem todo)
+    {
+        return todo.Status == TodoCompletionStatus.Completed
+            ? TodoText.ReopenButton
+            : TodoText.CompleteButton;
+    }
+
+    private Task PersistAsync()
+    {
+        return TodoStore.SaveAsync(todos);
+    }
+}
