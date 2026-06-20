@@ -3,4 +3,5 @@
   <Project Path="ExampleAppMAUI.Web.Client/ExampleAppMAUI.Web.Client.csproj" />
   <Project Path="ExampleAppMAUI.Web/ExampleAppMAUI.Web.csproj" />
   <Project Path="ExampleAppMAUI/ExampleAppMAUI.csproj" />
+  <Project Path="ExampleAppMAUI.Tests/ExampleAppMAUI.Tests.csproj" />
 </Solution>
