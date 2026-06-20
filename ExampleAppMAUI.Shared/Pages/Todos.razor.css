@@ -1,44 +1,53 @@
 .todo-page {
-    color: var(--todo-color-text);
+    color: var(--akshat-color-ink);
     display: grid;
-    gap: var(--todo-space-4);
+    gap: var(--akshat-space-4);
     max-width: 54rem;
 }
 
 .todo-header {
     display: grid;
-    gap: var(--todo-space-2);
+    gap: var(--akshat-space-2);
+}
+
+.todo-header h1 {
+    font-weight: var(--akshat-font-weight-bold);
 }
 
 .todo-header p {
-    color: var(--todo-color-text-muted);
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
     margin: 0;
 }
 
 .todo-form {
     display: grid;
-    gap: var(--todo-space-3);
+    gap: var(--akshat-space-3);
     grid-template-columns: minmax(0, 1fr) auto;
 }
 
 .todo-input {
-    border: 1px solid var(--todo-color-border);
-    border-radius: var(--todo-radius-control);
-    padding: var(--todo-space-3) var(--todo-space-4);
+    background: var(--akshat-color-surface-raised);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-control);
+    color: var(--akshat-color-ink);
+    font-weight: var(--akshat-font-weight-medium);
+    padding: var(--akshat-space-3) var(--akshat-space-4);
 }
 
 .todo-empty {
-    background: var(--todo-color-surface-muted);
-    border: 1px solid var(--todo-color-border);
-    border-radius: var(--todo-radius-panel);
-    color: var(--todo-color-text-muted);
+    background: var(--akshat-color-surface-muted);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-panel);
+    color: var(--akshat-color-muted);
+    font-weight: var(--akshat-font-weight-medium);
     margin: 0;
-    padding: var(--todo-space-5);
+    padding: var(--akshat-space-5);
 }
 
 .todo-list {
     display: grid;
-    gap: var(--todo-space-3);
+    gap: var(--akshat-space-3);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -46,33 +55,34 @@
 
 .todo-item {
     align-items: center;
-    background: var(--todo-color-surface);
-    border: 1px solid var(--todo-color-border);
-    border-radius: var(--todo-radius-panel);
+    background: var(--akshat-color-surface-raised);
+    border: 1px solid var(--akshat-color-border);
+    border-radius: var(--akshat-radius-panel);
     display: grid;
-    gap: var(--todo-space-3);
+    gap: var(--akshat-space-3);
     grid-template-columns: minmax(0, 1fr) auto auto;
-    padding: var(--todo-space-4);
+    padding: var(--akshat-space-4);
 }
 
 .todo-item-completed .todo-title {
-    color: var(--todo-color-text-muted);
+    color: var(--akshat-color-muted);
     text-decoration: line-through;
 }
 
 .todo-title {
-    font-weight: 600;
+    font-weight: var(--akshat-font-weight-semibold);
     overflow-wrap: anywhere;
 }
 
 .todo-status {
-    color: var(--todo-color-completed);
+    color: var(--akshat-color-coffee);
     font-size: 0.875rem;
+    font-weight: var(--akshat-font-weight-medium);
 }
 
 .todo-actions {
     display: flex;
-    gap: var(--todo-space-2);
+    gap: var(--akshat-space-2);
 }
 
 @media (max-width: 640px) {
