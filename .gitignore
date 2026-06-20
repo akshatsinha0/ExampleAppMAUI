@@ -1,0 +1,42 @@
+# Build output
+bin/
+obj/
+**/bin/
+**/obj/
+
+# IDE and editor state
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Code intelligence and generated local graphs
+.codegraph/
+graphify-out/
+.understand-anything/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs and diagnostics
+*.log
+TestResults/
+coverage/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Publish/package artifacts
+*.nupkg
+*.snupkg
+*.msix
+*.appx
+*.appxbundle
+*.msixbundle

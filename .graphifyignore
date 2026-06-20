@@ -1,0 +1,24 @@
+bin/
+obj/
+.vs/
+.codegraph/
+graphify-out/
+
+# Static/generated assets that force semantic extraction but are not useful
+# for understanding this scaffold's source architecture.
+**/wwwroot/lib/
+**/wwwroot/index.html
+**/Resources/Raw/AboutAssets.txt
+**/Resources/AppIcon/
+**/Resources/Images/
+**/Resources/Splash/
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.svg
+**/*.ico
+**/*.ttf
+**/*.woff
+**/*.woff2
+**/*.map
